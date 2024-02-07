@@ -1,0 +1,19 @@
+{% extends 'my_app/base.html' %}
+
+{% block content %}
+
+    <h2 style="text-align: center">{{ search | title }}</h2>
+    <div class="row">
+        {% for post in final_postings %}
+            <div class="card" style="width:400px">
+                <img class="card-img-top" src="{{ post.3 }}" alt="Card image" class="float-left"  width="300" height="300">
+                <div class="card-body">
+                    <h4 class="card-title">{{ post.0 }}</h4>
+                        <p class="card-text">{{ post.2 }}</p>
+                    <a href="{{ post.1 }}" class="btn btn-primary">See Product</a>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+
+{% endblock %}
